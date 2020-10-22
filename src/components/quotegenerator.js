@@ -1,13 +1,15 @@
 import React, {Fragment} from 'react';
 import 'semantic-ui-css/semantic.min.css'
 
-export default function QuoteGenerator() {
+export default function QuoteGenerator(props) {
     return (
       <Fragment>
-        <div className="container">
-          <h1>Hello</h1>
-        
+        <div id="quote-box">
+            <p id ="text">{this.props.quote}</p>
+          <p id ="text">   </p>
+          <button id="quote-box"></button>
         </div>
+        
       </Fragment>
     );
   }
