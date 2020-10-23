@@ -5,9 +5,9 @@ export default function QuoteGenerator(props) {
     return (
       <Fragment>
         <div id="quote-box">
-            <p id ="text">{this.props.quote}</p>
-          <p id ="text">   </p>
-          <button id="quote-box"></button>
+            <p id ="text">{props.quoteAuthor}</p>
+          <p id ="text">{props.quote}</p>
+         
         </div>
         
       </Fragment>
