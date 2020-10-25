@@ -4,16 +4,19 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 
 export default function QuoteGenerator(props) {
 
-    return (
-      <Fragment>
-        <div id="quote-box">
-            <p id ="text">{props.quoteAuthor}</p>
-            <p id ="text">{props.quote}</p>
-            
-            
-        </div>
-      </Fragment>
-    );
-  }
-  
- 
+  return (
+    <Fragment>
+      <div id="quote-box">
+        <p id="text">{props.quoteAuthor}</p>
+        <p id="text">{props.quote}</p>
+        <button class="ui twitter button">
+          <i class="twitter icon"></i>
+          <a className="twitter-share-button btn btn-primary" href={`https://twitter.com/intent/tweet?text=${props.quote}`}>Tweet</a>
+         </button>
+         <button class="ui positive basic button" onClick={props.handleClick}>New Quote</button>
+      </div>
+    </Fragment>
+  );
+}
+
+

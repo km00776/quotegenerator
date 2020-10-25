@@ -8,7 +8,7 @@ export default class QuoteFetcher extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quote: "wewew",
+      quote: "",
       quoteAuthor: ""
     }
 
@@ -32,8 +32,8 @@ export default class QuoteFetcher extends React.Component {
 
   
 
-handleClick() {
-     fetch("http://quotes.stormconsultancy.co.uk/random.json")
+ handleClick() {
+    fetch("http://quotes.stormconsultancy.co.uk/random.json")
     .then(res => res.json())
     .then(
       (result) => {
@@ -46,22 +46,16 @@ handleClick() {
    }
 
 
-
   render() {
     return (
       <Fragment>
-        <QuoteGenerator quote={this.state.quote} quoteAuthor={this.state.quoteAuthor}></QuoteGenerator>
-        <button class="ui positive basic button" onClick={this.handleClick}>New Quote</button>
+        <QuoteGenerator quote={this.state.quote} quoteAuthor={this.state.quoteAuthor} handleClick={this.handleClick}></QuoteGenerator>
+       
         <div className="centerContent">
           <div className="selfCenter">
-            <TwitterShareButton url="https://facebook.com/saurabhnemade" options={{
-              text: this.state.quote,
-              via: 'saurabhnemade',
-              size: 'large',
-            }} placeholder={<div />} />
           </div>
         </div>
-        
+         
       </Fragment>
     );
   }
